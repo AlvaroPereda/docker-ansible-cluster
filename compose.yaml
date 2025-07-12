@@ -1,0 +1,19 @@
+services:
+  control:
+    build:
+      context: .
+      dockerfile: Dockerfile.control
+    image: control:latest
+    container_name: ansible-control
+    tty: true # Esto permite que el contenedor se mantenga activo
+
+  node1:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    image: node:latest
+    container_name: node1
+
+  node2:
+    image: node:latest
+    container_name: node2

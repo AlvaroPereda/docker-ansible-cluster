@@ -1,0 +1,16 @@
+FROM debian:latest
+
+RUN apt-get update && apt-get install -y \
+    ansible \
+    openssh-client \
+    sshpass
+
+RUN useradd -ms /bin/bash ansible 
+USER ansible
+WORKDIR /home/ansible
+
+COPY ansible.cfg .
+COPY inventory .
+COPY playbook.yml .
+
+

@@ -1,0 +1,7 @@
+[nodes]
+node1
+node2
+
+[nodes:vars]
+ansible_ssh_user=node
+ansible_ssh_pass=nodepass
